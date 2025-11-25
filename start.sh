@@ -1,4 +1,7 @@
 #!/bin/bash
+#!/bin/bash
+python3 -m pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt
 
 # Levanta el Rasa server con API habilitada
 rasa run --enable-api --cors "*" --port $PORT &
