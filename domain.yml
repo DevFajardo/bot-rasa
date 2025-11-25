@@ -1,0 +1,261 @@
+version: "3.1"
+
+intents:
+  - saludo
+  - despedida
+  - agradecimiento
+  - afirmacion
+  - negacion
+  - estado_bien
+  - estado_mal
+  - dar_identificacion
+  - dar_nombre
+  - dar_telefono
+  - dar_correo
+  - dar_ingresos
+  - dar_puntaje_credito
+  - dar_monto_prestamo
+  - dar_antiguedad_laboral
+  - preguntar_requisitos_documentos
+  - preguntar_elegibilidad
+  - preguntar_canales
+  - feedback_positivo
+  - feedback_negativo
+  - charla_pequena
+  - capacidades_bot
+  - solicitar_simulacion_prestamo
+  - preguntar_tasa_interes
+  - preguntar_plazos_pago
+  - preguntar_tiempo_respuesta
+  - solicitar_asesor
+  - nlu_fallback
+  - out_of_scope
+  - solicitar_informacion_prestamo
+  - preguntar_ubicacion
+  - preguntar_horario
+  - preguntar_documentos
+  - preguntar_si_calcula
+  - corregir_informacion
+  - problema_entendimiento
+  - pedir_repeticion_resultado
+  - cancelar_solicitud
+  - pedir_explicacion_resultado
+  - volver_a_empezar
+  - pedir_prestamo
+  - datos_prestamo
+  - consultar_ultima_prediccion
+
+entities:
+  - loan_amount
+  - income
+  - credit_score
+  - years_employed
+
+slots:
+  ingreso:
+    type: text
+    mappings:
+      - type: from_text
+
+  puntaje:
+    type: text
+    mappings:
+      - type: from_text
+
+  monto:
+    type: text
+    mappings:
+      - type: from_text
+
+  años_trabajados:
+    type: text
+    mappings:
+      - type: from_text
+
+responses:
+  utter_saludo:
+    - text: "¡Hola! soy tu asistente virtual y puedo ayudarte a predecir si tu préstamo será aprobado o no. Solamente necesito estos datos en una sola línea con este formato: mi ingreso es [valor] mi puntaje es [valor] el monto es [valor] llevo [valor] años trabajando"
+    - text: "¡Hola! Estoy aquí para ayudarte a evaluar tu solicitud de préstamo. Por favor, envíame tus datos en una sola línea con este formato: mi ingreso es [valor] mi puntaje es [valor] el monto es [valor] llevo [valor] años trabajando"
+    - text: "¡Bienvenido! Puedo ayudarte a predecir si tu préstamo será aprobado. Por favor, proporciona tus datos en una sola línea siguiendo este formato: mi ingreso es [valor] mi puntaje es [valor] el monto es [valor] llevo [valor] años trabajando"
+    - text: "¡Hola! Soy tu asistente virtual para evaluar préstamos. Envíame tus datos en una sola línea con este formato: mi ingreso es [valor] mi puntaje es [valor] el monto es [valor] llevo [valor] años trabajando"
+
+  utter_pedir_datos_unificados:
+    - text: "Perfecto. Envíame todos tus datos en una sola línea con este formato: mi ingreso es [valor] mi puntaje es [valor] el monto es [valor] llevo [valor] años trabajando"
+
+  utter_despedida:
+    - text: "¡Hasta luego! Gracias por usar el servicio."
+    - text: "Adiós, que tengas un excelente día."
+    - text: "Nos vemos, ¡vuelve si necesitas algo!"
+    - text: "Hasta pronto. Estoy aquí para ayudarte cuando quieras."
+
+  utter_agradecimiento:
+    - text: "¡Con gusto! Estoy aquí para ayudarte."
+    - text: "Me alegra poder ayudarte."
+    - text: "Gracias a ti por confiar en nosotros."
+    - text: "De nada, cualquier cosa me avisas."
+
+  utter_afirmacion:
+    - text: "Perfecto, entendido."
+    - text: "¡Claro que sí!"
+    - text: "Muy bien, sigamos entonces."
+    - text: "Perfecto, procederé con eso."
+
+  utter_negacion:
+    - text: "De acuerdo, no hay problema."
+    - text: "Está bien, no lo haré."
+    - text: "Listo, descartado."
+    - text: "Perfecto, lo tengo en cuenta."
+
+  utter_pedir_ingresos:
+    - text: "Por favor, dime tu ingreso mensual."
+
+  utter_pedir_puntaje_credito:
+    - text: "¿Cuál es tu puntaje de crédito?"
+
+  utter_pedir_monto_prestamo:
+    - text: "¿Qué monto deseas solicitar?"
+
+  utter_pedir_antiguedad:
+    - text: "¿Cuántos años llevas trabajando en tu empleo actual?"
+
+  utter_estado_bien:
+    - text: "¡Qué bueno! Me alegra saberlo."
+    - text: "Excelente, vamos con lo que necesites."
+    - text: "Perfecto, sigamos entonces."
+    - text: "Me alegra saber que estás bien."
+
+  utter_estado_mal:
+    - text: "Lamento que te sientas así. ¿En qué puedo ayudarte?"
+    - text: "Siento que estés pasando por eso. Estoy aquí para ayudarte."
+    - text: "Si puedo ayudarte con algo, dime."
+    - text: "Entiendo, dime qué necesitas y te apoyo."
+
+  utter_dar_identificacion:
+    - text: "Perfecto, ya recibí tu identificación."
+    - text: "Documento recibido, gracias."
+    - text: "Muy bien, procesaré tu identificación."
+    - text: "Identificación registrada correctamente."
+
+  utter_dar_nombre:
+    - text: "Gracias, ya registré tu nombre."
+    - text: "Perfecto, nombre guardado."
+    - text: "Muy bien, anoté tu nombre."
+    - text: "Nombre recibido correctamente."
+
+  utter_dar_telefono:
+    - text: "Número de teléfono registrado."
+    - text: "Listo, ya anoté tu número."
+    - text: "Muy bien, teléfono recibido."
+    - text: "Contacto guardado correctamente."
+
+  utter_dar_correo:
+    - text: "Correo registrado correctamente."
+    - text: "Perfecto, ya guardé tu email."
+    - text: "Correo recibido, gracias."
+    - text: "Email anotado, continuemos."
+
+  utter_confirmar_ingresos:
+    - text: "Ingreso registrado. Gracias."
+    - text: "Perfecto, ya tengo tu información de ingresos."
+    - text: "Ingresos recibidos correctamente."
+    - text: "Muy bien, usaremos ese valor para la evaluación."
+
+  utter_dar_puntaje_credito:
+    - text: "Puntaje de crédito registrado."
+    - text: "Perfecto, ya tengo tu score."
+    - text: "Puntaje recibido, gracias."
+    - text: "Muy bien, procesaré tu puntaje."
+
+  utter_dar_monto_prestamo:
+    - text: "Monto solicitado registrado."
+    - text: "Perfecto, ya anoté el monto."
+    - text: "Solicitud de monto recibida."
+    - text: "Muy bien, monto guardado."
+
+  utter_confirmar_antiguedad:
+    - text: "Antigüedad laboral registrada."
+    - text: "Perfecto, ya guardé ese dato."
+    - text: "Antigüedad recibida correctamente."
+    - text: "Muy bien, lo tendré en cuenta."
+
+  utter_preguntar_requisitos_documentos:
+    - text: "Para solicitar un préstamo necesitas: documento de identidad, comprobante de ingresos y certificado laboral."
+
+  utter_preguntar_elegibilidad:
+    - text: "La elegibilidad depende de ingresos, score y antigüedad laboral."
+
+  utter_preguntar_canales:
+    - text: "Puedes usar el bot por WhatsApp y Telegram."
+
+  utter_feedback_positivo:
+    - text: "¡Gracias por tu comentario! Me alegra ayudarte."
+
+  utter_feedback_negativo:
+    - text: "Lamento que hayas tenido una mala experiencia."
+
+  utter_charla_pequena:
+    - text: "Estoy bien, gracias por preguntar. ¿Y tú?"
+
+  utter_capacidades_bot:
+    - text: "Puedo evaluar si tu préstamo sería aprobado según tus datos."
+
+  utter_solicitar_simulacion_prestamo:
+    - text: "Claro, dime tus ingresos, score, monto solicitado y antigüedad."
+
+  utter_preguntar_tasa_interes:
+    - text: "La tasa de interés promedio es del 1% al 2% mensual."
+
+  utter_plazos_pago:
+    - text: "Los plazos van desde 6 hasta 60 meses."
+
+  utter_preguntar_tiempo_respuesta:
+    - text: "La respuesta de un préstamo suele tardar entre 5 y 24 horas."
+
+  utter_solicitar_asesor:
+    - text: "Te conecto con un asesor humano."
+
+  utter_nlu_fallback:
+    - text: "No entendí bien. ¿Puedes repetirlo?"
+
+  utter_out_of_scope:
+    - text: "Lo siento, no puedo ayudarte con ese tipo de información."
+
+  utter_solicitar_informacion_prestamo:
+    - text: "Claro, necesito tus datos para analizar tu préstamo."
+
+  utter_preguntar_ubicacion:
+    - text: "Somos un servicio digital, no tenemos sede física."
+
+  utter_preguntar_horario:
+    - text: "Nuestro horario es 24/7 en este chat."
+
+  utter_requisitos_documentos:
+    - text: "Los documentos requeridos son: ingreso, puntaje, monto y antigüedad."
+
+  utter_preguntar_si_calcula:
+    - text: "Sí, puedo calcular si tu préstamo sería aprobado."
+
+  utter_corregir_informacion:
+    - text: "Claro, dime qué dato deseas corregir."
+
+  utter_problema_entendimiento:
+    - text: "Creo que no entendí bien. ¿Puedes explicarlo otra vez?"
+
+  utter_pedir_repeticion_resultado:
+    - text: "Claro, aquí tienes el resultado nuevamente."
+
+  utter_cancelar_solicitud:
+    - text: "Entendido, cancelaré la solicitud."
+
+  utter_pedir_explicacion_resultado:
+    - text: "Claro, te explico cómo se calculó el resultado."
+
+  utter_volver_a_empezar:
+    - text: "Perfecto, volvamos a empezar. ¿Qué deseas hacer primero?"
+
+  utter_final_prestamo:
+    - text: "Gracias. Ya hemos recibido todos los datos del préstamo."
+
+actions:
+  - action_prediccion_prestamo
+  - action_ultima_prediccion

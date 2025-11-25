@@ -1,0 +1,122 @@
+version: "3.1"
+
+rules:
+  - rule: Saludo inicial
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+
+  - rule: Requisitos de documentos
+    steps:
+      - intent: preguntar_requisitos_documentos
+      - action: utter_requisitos_documentos
+
+  - rule: Preguntar elegibilidad
+    steps:
+      - intent: preguntar_elegibilidad
+      - action: utter_preguntar_elegibilidad
+
+  - rule: Duda sobre tasa de interés
+    steps:
+      - intent: preguntar_tasa_interes
+      - action: utter_preguntar_tasa_interes
+
+  - rule: Duda sobre plazos de pago
+    steps:
+      - intent: preguntar_plazos_pago
+      - action: utter_plazos_pago
+
+  - rule: Tiempo de respuesta
+    steps:
+      - intent: preguntar_tiempo_respuesta
+      - action: utter_preguntar_tiempo_respuesta
+
+  - rule: Canales de atención
+    steps:
+      - intent: preguntar_canales
+      - action: utter_preguntar_canales
+
+  - rule: Ubicación de la empresa
+    steps:
+      - intent: preguntar_ubicacion
+      - action: utter_preguntar_ubicacion
+
+  - rule: Horarios
+    steps:
+      - intent: preguntar_horario
+      - action: utter_preguntar_horario
+
+  - rule: Documentos necesarios
+    steps:
+      - intent: preguntar_documentos
+      - action: utter_requisitos_documentos
+
+  - rule: Small talk
+    steps:
+      - intent: charla_pequena
+      - action: utter_charla_pequena
+
+  - rule: Capacidades del bot
+    steps:
+      - intent: capacidades_bot
+      - action: utter_capacidades_bot
+
+  - rule: Feedback positivo
+    steps:
+      - intent: feedback_positivo
+      - action: utter_feedback_positivo
+
+  - rule: Agradecimiento
+    steps:
+      - intent: agradecimiento
+      - action: utter_agradecimiento
+
+  - rule: mostrar ultima prediccion
+    steps:
+      - intent: consultar_ultima_prediccion
+      - action: action_ultima_prediccion
+
+  - rule: Feedback negativo
+    steps:
+      - intent: feedback_negativo
+      - action: utter_feedback_negativo
+
+  - rule: Fallback predeterminado
+    steps:
+      - intent: nlu_fallback
+      - action: utter_nlu_fallback
+
+  - rule: Mensajes fuera de alcance
+    steps:
+      - intent: out_of_scope
+      - action: utter_out_of_scope
+
+  - rule: Corregir información
+    steps:
+      - intent: corregir_informacion
+      - action: utter_corregir_informacion
+
+  - rule: Usuario no entiende la respuesta
+    steps:
+      - intent: problema_entendimiento
+      - action: utter_problema_entendimiento
+
+  - rule: Cancelar solicitud
+    steps:
+      - intent: cancelar_solicitud
+      - action: utter_cancelar_solicitud
+
+  - rule: Explicación del resultado del préstamo
+    steps:
+      - intent: pedir_explicacion_resultado
+      - action: utter_pedir_explicacion_resultado
+
+  - rule: Volver a empezar flujo
+    steps:
+      - intent: volver_a_empezar
+      - action: utter_volver_a_empezar
+
+  - rule: Procesar datos unificados
+    steps:
+      - intent: datos_prestamo
+      - action: action_prediccion_prestamo

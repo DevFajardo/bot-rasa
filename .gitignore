@@ -1,0 +1,40 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+.env.local/
+.env.*.local
+
+# Rasa specific
+.rasa/
+models/
+rasa.db
+events.db
+*.lock
+*.tar.gz
+*.log
+
+# Logs
+logs/
+*.log
+.venv/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Node / JavaScript (si tienes frontends)
+node_modules/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp

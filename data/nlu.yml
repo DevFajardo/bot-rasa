@@ -1,0 +1,558 @@
+version: "3.1"
+
+nlu:
+  - intent: consultar_ultima_prediccion
+    examples: |
+      - quiero ver mi última predicción
+      - dame mi ultima predicción
+      - cual fue mi predicción más reciente
+      - mostrar última predicción
+      - ver última predicción
+      - última predicción por favor
+      - muéstrame mi última predicción
+      - cuál fue mi última predicción
+      - quiero revisar mi última predicción
+      - enséñame mi última predicción
+      
+  - intent: saludo
+    examples: |
+      - hola
+      - buenos días
+      - buenas tardes
+      - qué tal
+      - holaaa
+      - muy buenas
+      - buen día
+      - hola qué haces
+      - hola cómo estás
+      - saludos
+      - buenas noches
+      - ey hola
+
+  - intent: despedida
+    examples: |
+      - adiós
+      - hasta luego
+      - nos vemos
+      - chao
+      - hasta pronto
+      - que estés bien
+      - hablamos luego
+      - me despido
+      - cuídate
+      - hasta la próxima
+
+  - intent: agradecimiento
+    examples: |
+      - gracias
+      - muchas gracias
+      - te lo agradezco
+      - gracias por la ayuda
+      - mil gracias
+      - gracias en serio
+      - te agradezco mucho
+      - infinitas gracias
+      - muy amable
+      - gracias por tu tiempo
+
+  - intent: afirmacion
+    examples: |
+      - sí
+      - claro
+      - por supuesto
+      - correcto
+      - así es
+      - totalmente
+      - afirmativo
+      - claro que sí
+      - de acuerdo
+      - seguro que sí
+
+  - intent: negacion
+    examples: |
+      - no
+      - para nada
+      - no es correcto
+      - no gracias
+      - no quiero
+      - en absoluto
+      - para nada es así
+      - no estoy de acuerdo
+      - no puede ser
+      - no lo creo
+
+  - intent: estado_bien
+    examples: |
+      - estoy bien
+      - todo bien gracias
+      - excelente
+      - muy bien
+      - genial
+      - fantástico
+      - súper bien
+      - todo perfecto
+      - me siento muy bien
+      - todo marcha bien
+
+  - intent: estado_mal
+    examples: |
+      - estoy mal
+      - no muy bien
+      - me siento triste
+      - tengo un problema
+      - estoy preocupado
+      - me siento mal
+      - estoy estresado
+      - estoy angustiado
+      - no estoy bien hoy
+      - me siento fatal
+
+  - intent: dar_identificacion
+    examples: |
+      - mi cédula es 12345678
+      - documento 98765432
+      - mi DNI 45678901
+      - ID: 100200300
+      - número de identificación 7654321
+      - mi número de documento es 11223344
+      - cédula número 99887766
+      - identificación 55443322
+      - mi ID es 90817263
+      - mi documento es 44332211
+
+  - intent: dar_nombre
+    examples: |
+      - me llamo Juan Pérez
+      - soy María López
+      - nombre: Carlos Ramírez
+      - mi nombre es Ana
+      - búsqueme como Luis Torres
+      - me llamo Pedro Gómez
+      - puede registrarme como Sofía Martínez
+      - mi nombre completo es Laura Fernández
+      - soy Andrés Díaz
+      - me conocen como Sergio López
+
+  - intent: dar_telefono
+    examples: |
+      - mi teléfono es 3001234567
+      - celular 3219876543
+      - mi número es +57 300 555 4444
+      - puedes llamarme al 315000111
+      - mi contacto es 3104443332
+      - teléfono 3125558899
+      - mi número celular es 3012233445
+      - contáctame al 3209988776
+      - mi móvil es 3146677889
+      - número telefónico 3007776665
+
+  - intent: dar_correo
+    examples: |
+      - mi email es juan@mail.com
+      - correo: maria.lopez@example.com
+      - e-mail ana@gmail.com
+      - escríbeme a contacto@empresa.com
+      - mi correo electrónico es prueba123@dominio.co
+      - puedes enviarme a usuario@test.com
+      - mi mail es info@correo.co
+      - correo personal: pedro123@hotmail.com
+      - usa este correo: soporte@miempresa.com
+      - te dejo mi email: cliente@servicios.com
+
+  - intent: dar_ingresos
+    examples: |
+      - mi ingreso mensual es [2500000](income)
+      - gano [3.500.000](income) al mes
+      - salario: [1800000](income)
+      - ingreso [8000000](income) anual
+      - mis ingresos son [1200000](income) mensuales
+      - recibo unos [2000000](income) al mes
+      - mi sueldo es de [4000000](income)
+      - gano [900000](income) mensuales
+      - mis ingresos mensuales rondan [3200000](income)
+      - tengo un ingreso de [5000000](income)
+      - 2500000
+      - 3500000
+      - 1800000
+      - 8000000
+      - 1200000
+      - 2000000
+      - 4000000
+      - 900000
+      - 3200000
+      - 5000000
+
+  - intent: dar_puntaje_credito
+    examples: |
+      - mi puntaje de crédito es [680](credit_score)
+      - credit score [720](credit_score)
+      - tengo [640](credit_score) de puntaje
+      - puntaje [580](credit_score)
+      - score: [790](credit_score)
+      - mi score actual es [700](credit_score)
+      - tengo un puntaje de [610](credit_score)
+      - mi calificación crediticia es [730](credit_score)
+      - mi score está en [665](credit_score)
+      - tengo score [750](credit_score)
+      - mi puntaje es [700](credit_score)
+      - tengo un score de [650](credit_score)
+      - [800](credit_score) es mi puntaje
+      - mi crédito es de [720](credit_score)
+      - [600](credit_score)
+       - [700](credit_score)
+      - [650](credit_score)
+      - [800](credit_score)
+      - [720](credit_score)
+      - [680](credit_score)
+      - 700
+      - 650
+      - 800
+      - 720
+      - 680
+  - lookup: credit_score
+    examples: |
+      - 300
+      - 400
+      - 500
+      - 600
+      - 700
+      - 800
+  - intent: dar_monto_prestamo
+    examples: |
+      - solicité [10000000](loan_amount) COP
+      - monto del préstamo [5000000](loan_amount)
+      - quiero un préstamo por [2000000](loan_amount)
+      - importe: [15000000](loan_amount)
+      - monto solicitado [750000](loan_amount)
+      - necesito [3000000](loan_amount) de préstamo
+      - solicito un crédito por [1200000](loan_amount)
+      - estoy pidiendo [10000000](loan_amount)
+      - quiero solicitar [800000](loan_amount)
+      - monto requerido [2500000](loan_amount)
+      - dar_monto_prestamo
+      - quiero un préstamo de [500000](loan_amount)
+      - necesito [1000000](loan_amount)
+      - monto solicitado: [750000](loan_amount)
+
+  - intent: dar_antiguedad_laboral
+    examples: |
+      - llevo [3](years_employed) años en mi trabajo
+      - antigüedad [5](years_employed) años
+      - empleo desde [2018](years_employed)
+      - trabajo hace [10](years_employed) años
+      - llevo trabajando [0.5](years_employed) años
+      - llevo un año en mi empleo actual
+      - tengo [2](years_employed) años de experiencia en este trabajo
+      - estoy contratado desde [2020](years_employed)
+      - trabajo allí hace [4](years_employed) años
+      - llevo medio año trabajando
+      - llevo [3](years_employed) años trabajando aquí
+      - tengo [5](years_employed) años en mi empleo
+      - antigüedad laboral: [2](years_employed)
+
+  - intent: preguntar_requisitos_documentos
+    examples: |
+      - ¿qué documentos necesito para el préstamo?
+      - requisitos para el crédito
+      - papeles necesarios para aplicar
+      - lista de documentos
+      - qué debo subir para la solicitud
+      - qué documentación piden
+      - cuáles son los documentos obligatorios
+      - qué archivos tengo que adjuntar
+      - qué papeles se requieren
+      - documentos para solicitar el préstamo
+
+  - intent: preguntar_elegibilidad
+    examples: |
+      - ¿soy elegible para el préstamo?
+      - requisitos para ser aprobado
+      - cumplo los requisitos para crédito?
+      - puedo solicitar un préstamo con mi score?
+      - condiciones para ser aprobado
+      - soy apto para el préstamo?
+      - qué se necesita para ser elegible
+      - puedo aplicar con mi situación actual?
+      - califico para un crédito?
+      - cómo saber si soy elegible
+
+  - intent: preguntar_canales
+    examples: |
+      - ¿por dónde puedo usar el bot?
+      - ¿usan WhatsApp?
+      - ¿están en Telegram?
+      - canales de atención
+      - medios disponibles
+      - puedo usarlo en Messenger?
+      - ¿tienen app móvil?
+      - cómo contacto al bot
+      - puedo usar el bot en la web?
+      - en qué plataformas está disponible
+
+  - intent: feedback_positivo
+    examples: |
+      - excelente servicio
+      - muy buena atención
+      - me ayudaron mucho
+      - todo perfecto
+      - fue genial
+      - atención impecable
+      - me resolvieron todo
+      - servicio rápido y claro
+      - superaron mis expectativas
+      - todo estuvo excelente
+
+  - intent: feedback_negativo
+    examples: |
+      - mala atención
+      - no me gustó el servicio
+      - tuvieron un error
+      - no funcionó bien
+      - quedé insatisfecho
+      - fue lento el proceso
+      - me confundieron
+      - no me ayudaron
+      - servicio deficiente
+      - hubo problemas con la atención
+
+  - intent: charla_pequena
+    examples: |
+      - cómo estás?
+      - qué tal tu día?
+      - hace calor?
+      - qué hora es?
+      - cómo va todo?
+      - todo bien?
+      - cómo te encuentras?
+      - buen día, cómo estás?
+      - qué tal tu fin de semana?
+      - cómo amaneciste?
+
+  - intent: capacidades_bot
+    examples: |
+      - qué puedes hacer
+      - para qué sirves
+      - cuáles son tus funciones
+      - en qué me ayudas
+      - qué sabes hacer
+      - que funcion cumples
+      - cuáles servicios ofreces
+      - cómo me puedes asistir
+      - qué tipo de tareas realizas
+      - para qué te puedo usar
+
+  - intent: solicitar_simulacion_prestamo
+    examples: |
+      - quiero una simulación del préstamo
+      - simular préstamo por favor
+      - haz una simulación del crédito
+      - quiero un prestamo 
+      - dame un prestamo
+      - quiero evaluarme
+      - prestamo
+      - necesito calcular mi préstamo
+      - hazme un cálculo de crédito
+      - quiero probar diferentes montos
+      - muéstrame un simulador de préstamo
+      - simula mi crédito ahora
+
+  - intent: preguntar_tasa_interes
+    examples: |
+      - ¿cuál es la tasa de interés?
+      - qué interés manejan
+      - cuánto es la tasa anual
+      - qué interés cobran
+      - tasa del préstamo
+      - interés vigente del crédito
+      - cuál es el porcentaje de interés
+      - qué tasa aplican
+      - interés anual del préstamo
+      - tasa mínima de interés
+
+  - intent: preguntar_plazos_pago
+    examples: |
+      - ¿cuáles son los plazos de pago?
+      - en cuántos meses puedo pagar
+      - tiempo máximo para pagar
+      - cuánto dura el crédito
+      - plazo del préstamo
+      - cuántas cuotas puedo tener
+      - tiempo permitido para abonar
+      - plazos de financiamiento
+      - hasta cuándo puedo pagar
+      - duración de la financiación
+
+  - intent: preguntar_tiempo_respuesta
+    examples: |
+      - ¿cuánto se demoran en responder?
+      - tiempo de aprobación
+      - cuánto tarda el proceso
+      - cuándo sabré si me aprueban
+      - tiempo estimado de respuesta
+      - cuánto tarda la evaluación
+      - tiempo de revisión del préstamo
+      - demora en la aprobación
+      - cuánto tardan en contestar
+      - tiempo aproximado de respuesta
+
+  - intent: solicitar_asesor
+    examples: |
+      - quiero hablar con un asesor
+      - necesito apoyo humano
+      - pásame con un agente
+      - quiero atención personalizada
+      - alguien que me atienda por favor
+      - necesito un representante
+      - quiero comunicarme con alguien
+      - me conectas con un asesor
+      - asistencia humana por favor
+      - alguien que me guíe
+
+  - intent: nlu_fallback
+    examples: |
+      - hfjdksla
+      - ikkeu 23k2
+      - no entiendo lo que digo
+      - palabras sin sentido
+      - ???????
+      - blabla
+      - asdfgh
+      - 123456
+      - xyzabc
+      - no sé qué escribir
+
+  - intent: out_of_scope
+    examples: |
+      - háblame de fútbol
+      - qué opinas del clima
+      - cómo está tu familia
+      - quién es el presidente
+      - no tiene nada que ver
+      - contéstame algo fuera del tema
+      - qué sabes sobre cine
+      - dime algo sobre música
+      - háblame de política
+      - quiero preguntar otra cosa
+
+  - intent: preguntar_ubicacion
+    examples: |
+      - ¿dónde están ubicados?
+      - dirección de la oficina
+      - dónde queda la empresa
+      - ubicación física
+      - oficinas disponibles
+      - cómo llegar a la oficina
+      - en qué ciudad están
+      - dirección exacta
+      - ubicación de sucursales
+      - dónde se encuentran
+
+  - intent: preguntar_horario
+    examples: |
+      - ¿cuál es el horario?
+      - horas de atención
+      - en qué horario trabajan
+      - cuándo están abiertos
+      - atención al cliente horario
+      - horario de oficina
+      - en qué momento puedo llamar
+      - a qué hora atienden
+      - disponibilidad de atención
+      - horario de atención al público
+
+  - intent: preguntar_documentos
+    examples: |
+      - ¿qué documentos piden?
+      - documentos necesarios
+      - qué papeles debo llevar
+      - lista de documentos obligatorios
+      - documentos del crédito
+      - qué archivos debo entregar
+      - documentos requeridos
+      - qué debo presentar
+      - papeles necesarios para el préstamo
+      - documentación solicitada
+
+  - intent: preguntar_si_calcula
+    examples: |
+      - puedes calcular si califico?
+      - tú puedes revisar si aplico al crédito?
+      - puedes hacer la evaluación del préstamo?
+      - puedes decirme si soy apto?
+      - puedes verificar si aplico para el préstamo?
+      - revisa si califico
+      - verifica mi elegibilidad
+      - calcula si cumplo los requisitos
+      - comprueba si soy apto
+      - evalúa si puedo recibir el crédito
+
+  - intent: corregir_informacion
+    examples: |
+      - no, me equivoqué en los datos
+      - espera, déjame corregir algo
+      - esos no eran mis ingresos
+      - déjame cambiar el puntaje
+      - te doy mis datos de nuevo
+      - necesito actualizar mi información
+      - corrijo un error en mis datos
+      - quiero cambiar los datos ingresados
+      - me equivoqué, déjame corregir
+      - actualicemos la información
+
+  - intent: problema_entendimiento
+    examples: |
+      - no entendí qué debo darte
+      - qué es lo que tengo que decir?
+      - no sé cómo funciona esto
+      - explícame qué necesitas
+      - no entiendo qué información pides
+      - no sé qué información dar
+      - me perdí, explícame
+      - no entiendo cómo proceder
+      - puedes aclararme?
+      - necesito instrucciones claras
+
+  - intent: cancelar_solicitud
+    examples: |
+      - quiero cancelar la solicitud
+      - ya no quiero seguir con el préstamo
+      - detén el proceso
+      - no quiero continuar
+      - cancela todo por favor
+      - detén la operación
+      - cancela la aplicación
+      - no deseo seguir
+      - quiero parar el trámite
+      - interrumpe mi solicitud
+
+  - intent: pedir_explicacion_resultado
+    examples: |
+      - por qué me aprobaron?
+      - por qué me negaron el préstamo?
+      - qué influyó en el resultado?
+      - explícamelo mejor
+      - dame detalles del análisis
+      - quiero saber por qué
+      - detalle de la decisión
+      - por qué fue así
+      - explícamelo paso a paso
+      - razones de la aprobación/rechazo
+
+  - intent: volver_a_empezar
+    examples: |
+      - quiero empezar de nuevo
+      - reinicia el proceso
+      - volvamos al inicio
+      - quiero repetir todo
+      - empecemos otra vez
+      - iniciemos desde el principio
+      - reiniciar solicitud
+      - comenzar de cero
+      - empezar otra vez
+      - quiero reintentar
+
+  - intent: datos_prestamo
+    examples: |
+      - mi ingreso es 5000000 mi puntaje es 700 el monto es 20000000 llevo 3 años trabajando
+      - ingreso 3000000 puntaje 400 monto 50000000 antiguedad 2
+      - ingreso: 4000000 puntaje: 900 monto: 15000000 años: 1
